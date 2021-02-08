@@ -1,0 +1,46 @@
+<section class="container">
+    <div class="container__left">
+        <h2 class="heading">Experiencia</h2>
+        <p>
+            Tengo más de 6 años de experiencia diseñando y desarrollando aplicaciones web, haciendo uso de una gran
+            cantidad de tecnologías.
+        </p>
+        <p>
+            He formado parte de proyectos de ámbito nacional e internacional en sectores de alta demanda, como el
+            bancario, el sanitario o el periodístico.
+        </p>
+        <p>
+            Mis variadas experiencias me han aportado un elevado dinamismo y capacidad de aprendizaje, que me ayudan a
+            afrontar nuevas oportunidades.
+        </p>
+        <p>
+            Si lo deseas, puedes obtener más información de mí en mi <a href="https://www.linkedin.com/in/josefglopez/"
+                target="_blank">LinkedIn</a> o descargando mi CV <a
+                href="https://drive.google.com/file/d/10lWf4SMH286Y_wIi3e_T1tAcaBRVMRDx/view?usp=sharing"
+                target="_blank">aquí</a>.
+        </p>
+    </div>
+    <div class="container__right">
+        <div class="experience">
+            <div *ngFor="let role of roles; let i=index" class="role-card" [ngClass]="'role-card--'+role.index"
+                (click)="selectRole(i)">
+                <div class="role-card__top {{role.color}}"></div>
+                <div class="role-card__header">
+                    <div class="role-card__img-container {{role.color}}">
+                        <img [src]="role.image_url" alt="{{role.name}} image" class="role-card__img">
+                    </div>
+                    <span class="role-card__title">{{role.name}}</span>
+                </div>
+                <div class="role-card__separator {{role.color}}"></div>
+                <div class="role-card__body">
+                    <ul>
+                        <li *ngFor="let task of role.tasks">{{task}}</li>
+                    </ul>
+                    <div class="role-card__body__icons">
+                        <i *ngFor="let skill of role.skills" class="{{skill.class}}"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

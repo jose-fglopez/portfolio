@@ -1,0 +1,27 @@
+.highlight{
+    color: $color-primary;
+}
+
+.heading{
+
+    font-size: 3.5rem;
+    color: $color-primary;
+    margin-bottom: 3.5rem;
+
+    transition: all 0.4s;
+    animation: fadeIn 0.5s ease-in 1s;
+    animation-fill-mode: backwards;
+
+}
+
+p{
+    
+    transition: all 0.4s;
+    animation: fadeIn 0.5s ease-in 1.25s;
+    animation-fill-mode: backwards;
+    
+    &:not(:first-of-type ){
+        margin-top: 1rem;
+    }
+}
+

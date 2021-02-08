@@ -1,0 +1,22 @@
+<svg id="Componente_3_1" data-name="Componente 3 – 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <clipPath id="clip-path">
+      <rect x="-9" y="71" width="30" height="31" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect x="32" y="54" width="32" height="32" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect x="30" y="55" width="32" height="30" fill="none"/>
+    </clipPath>
+  </defs>
+  <rect id="Rectángulo_1" data-name="Rectángulo 1" width="32" height="32" fill="none"/>
+  <g id="Grupo_de_desplazamiento_1" data-name="Grupo de desplazamiento 1" transform="translate(10 -70)" clip-path="url(#clip-path)" style="isolation: isolate">
+    <text id="J" transform="translate(-2 100)" fill="#0c9ddb" font-size="38" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">J</tspan></text>
+  </g>
+  <g id="Grupo_de_desplazamiento_2" data-name="Grupo de desplazamiento 2" transform="translate(-32 -54)" clip-path="url(#clip-path-2)" style="isolation: isolate">
+    <g id="Grupo_de_desplazamiento_3" data-name="Grupo de desplazamiento 3" transform="translate(2)" clip-path="url(#clip-path-3)" style="isolation: isolate">
+      <text id="G" transform="translate(36 79)" fill="#0c9ddb" font-size="32" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">G</tspan></text>
+    </g>
+  </g>
+</svg>

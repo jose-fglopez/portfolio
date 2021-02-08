@@ -1,0 +1,24 @@
+<section class="container">
+    <div class="container__left">
+        <h2 class="heading">Habilidades</h2>
+        <p>
+            El área principal de mi experiencia se basa en el desarrollo web. Soy versátil tanto en el front-end como en
+            el back-end.
+        </p>
+        <p>
+            Mi trabajo orbita alrededor del diseño y programación de aplicaciones con arquitecturas orientadas a
+            microservicios.
+            Para mis desarrollos hago uso de Angular2+, HTML y SCSS para las vistas y NodeJs para las APIs.
+        </p>
+        <p>
+            También dispongo de experiencia como desarrollador QA de pruebas automáticas con Jest y Playwright.
+        </p>
+    </div>
+    <div class="container__right">
+        <div class="skill-list">
+            <div *ngFor="let skill of skills" class="skill-card" [attr.data-tooltip]="skill.name">
+                <i class="{{skill.class}} colored"></i>
+            </div>
+        </div>
+    </div>
+</section>

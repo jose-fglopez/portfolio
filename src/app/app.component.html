@@ -1,0 +1,43 @@
+<div class="main-container">
+  <header>
+    <img class="logo" [routerLink]="['/']" src="assets/img/logo.svg">
+    <label for="navi-toggle" class="navigation__button">
+      <i for="navi-toggle" class="material-icons-outlined">menu</i>
+    </label>
+    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+    <nav class="navigation">
+      <ul class="navigation__links">
+        <li class="navigation__links__item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active"
+          [routerLink]="['/']"><i class="material-icons-outlined">home</i></li>
+        <li class="navigation__links__item" routerLinkActive="active" [routerLink]="['/about']"><i
+            class="material-icons-outlined">person</i></li>
+        <li class="navigation__links__item" routerLinkActive="active" [routerLink]="['/skills']"><i
+            class="material-icons-outlined">settings</i></li>
+        <li class="navigation__links__item" routerLinkActive="active" [routerLink]="['/experience']"><i
+            class="material-icons-outlined">work_outline</i>
+        </li>
+      </ul>
+    </nav>
+    <div class="social">
+      <ul class="social__links">
+        <li class="social__links__item">
+          <a href="https://www.linkedin.com/in/josefglopez/" target="_blank">
+            <i class="devicon-linkedin-plain colored"></i>
+          </a>
+        </li>
+        <li class="social__links__item">
+          <a href="https://github.com/jose-fglopez" target="_blank">
+            <i class="devicon-github-plain colored"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </header>
+
+  <main [@routeAnimations]="outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation']" class="">
+    <router-outlet #outlet="outlet">
+    </router-outlet>
+  </main>
+
+</div>

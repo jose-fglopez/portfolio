@@ -1,0 +1,86 @@
+$animation-starting-delay: 1.5s;
+$animation-duration: 0.3s;
+$animation-delay: 0.1s;
+
+.skill-card {
+
+    height: 4rem;
+    width: 4rem;
+    background-color: rgba($color-black, 0.3);
+    border-radius: 5px;
+
+    animation: bounceIn $animation-duration ease-in $animation-starting-delay;
+    animation-fill-mode: backwards;
+
+    @include flexRowCenter;
+    cursor: pointer;
+
+    transition: transform 0.4s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+    transform: translateZ(0);
+
+    @for $i from 0 through 20 {
+        &:nth-child(#{$i + 1}) {
+            animation-delay: $animation-delay * $i + $animation-starting-delay;
+        }
+    }
+
+    &:not(:hover) {
+        & > * {
+            color: $color-gray-light !important;
+            opacity: 0.6;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.2);
+        & > * {
+            opacity: 1;
+        }
+    }
+
+    i {
+        display: block;
+        font-size: 3rem;
+    }
+}
+
+
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  /* Hide the tooltip content by default */
+  [data-tooltip]:before,
+  [data-tooltip]:after {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Position tooltip above the element */
+  [data-tooltip]:before {
+    position: absolute;
+    bottom: 110%;
+    padding: 0.5rem;
+    width: max-content;
+    border-radius: 3px;
+    background-color: $color-black;
+    color: $color-white;
+    content: attr(data-tooltip);
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  
+
+  /* Show tooltip content on hover */
+  [data-tooltip]:hover:before,
+  [data-tooltip]:hover:after {
+    visibility: visible;
+    opacity: 1;
+  }
