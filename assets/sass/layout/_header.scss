@@ -1,0 +1,152 @@
+header {
+    grid-area: header;
+
+    height: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+    background-color: $color-black;
+    position: relative;
+
+    @include respond(tab-port) {
+        flex-direction: row;
+    }
+
+    @include respond(phone) {
+        flex-direction: column;
+    }
+}
+
+.logo {
+    height: 4rem;
+    width: 4rem;
+    padding: 0.8rem;
+    background-color: transparent;
+    display: block;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.navigation__button {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    z-index: 10;
+
+    cursor: pointer;
+    @include respond(phone) {
+        opacity: 1;
+        visibility: visible;
+    }
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navigation__checkbox {
+    display: none;
+
+    &:checked + nav {
+        top: 99%;
+        opacity: 1;
+    }
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $color-white;
+    grid-area: navigation;
+    transition: all 0.3s;
+
+    @include respond(phone) {
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+    }
+
+    .navigation__links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $color-black;
+
+        .navigation__links__item {
+            text-transform: uppercase;
+            transition: color 0.5s;
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            cursor: pointer;
+
+            &.active {
+                i {
+                    color: $color-primary;
+                }
+            }
+
+            i {
+                color: $color-gray-light;
+            }
+            &:hover {
+                i {
+                    color: $color-primary;
+                }
+            }
+        }
+
+        @include respond(tab-port) {
+            flex-direction: row;
+        }
+    }
+    .navigation__icon {
+        color: $color-primary;
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        display: block;
+    }
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include respond(phone) {
+        visibility: hidden;
+    }
+}
+.social__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .social__links__item {
+        text-transform: uppercase;
+        transition: color 0.5s;
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        cursor: pointer;
+
+        i {
+            color: $color-gray-light;
+            font-size: 1.2rem;
+        }
+    }
+    @include respond(tab-port) {
+        flex-direction: row;
+    }
+}

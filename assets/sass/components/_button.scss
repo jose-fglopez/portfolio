@@ -1,0 +1,17 @@
+.button{
+    margin-top: 2rem;
+    border: 2px solid $color-white;
+    box-sizing: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13pt;
+    padding: 12px 50px 12px 20px;
+    transition: all 0.5s;
+    position: relative;
+    color: $color-white;
+    width: fit-content;
+    i{
+        position: absolute;
+        right: 15px;
+    }
+}

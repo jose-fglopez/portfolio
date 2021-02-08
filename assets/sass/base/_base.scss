@@ -1,0 +1,97 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  outline: none;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+  font-size: 100%;
+
+  @include respond(phone) {
+    font-size: 90%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 120%;
+  }
+}
+
+html,
+body {
+  box-sizing: border-box;
+  background-color: $background-color;
+  color: $font-color;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  width: 100%;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+body {
+  background-color: $color-black;
+  overflow-wrap: anywhere;
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+  perspective: 100rem;
+  -webkit-perspective: 100rem;
+  -moz-perspective: 100rem;
+}
+
+::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+ul {
+  list-style-type: none;
+  margin: 0rem;
+
+  li {
+    a {
+      text-decoration: none !important;
+      color: inherit;
+    }
+  }
+}
+
+a{
+  text-decoration: none;
+  color: $color-primary;
+}
+
+// Remove arrows fron input type number
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}

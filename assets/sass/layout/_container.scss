@@ -1,0 +1,61 @@
+.main-container {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    grid-template-areas: "header container";
+    min-height: 100vh;
+
+    @include respond(tab-port) {
+        grid-template-columns: 1fr;
+        grid-template-areas: "header" "container";
+        grid-template-rows: 4rem 1fr;
+    }
+}
+
+.container {
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left right";
+    grid-gap: 10rem;
+    width: 100%;
+
+    @include respond(tab-land) {
+        grid-gap: 7rem;
+    }
+
+    @include respond(tab-port) {
+        grid-template-columns: 1fr;
+        grid-template-areas: "left" "right";
+        grid-gap: 8rem;
+        padding: 2.5rem;
+    }
+
+    @include respond(phone) {
+        padding: 4rem 1.5rem 1.5rem 1.5rem;
+    }
+
+    .container__left,
+    .container__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        height: auto;
+
+    }
+
+    .container__left {
+        grid-area: left;
+    }
+    .container__right {
+        grid-area: right;
+        align-items: center;
+    }
+}
+
+section {
+    height: 100%;
+    background-color: $background-color;
+
+}

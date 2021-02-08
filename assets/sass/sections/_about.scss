@@ -1,0 +1,40 @@
+.profile,
+.profile__background,
+.profile__content {
+    width: 15rem;
+    height: 15rem;
+}
+
+.profile {
+    @include flexRowCenter;
+    position: relative;
+    animation: scale 0.5s ease-out 1.5s;
+    animation-fill-mode: backwards;
+}
+
+.profile__background,
+.profile__content {
+    transition: all 0.4s;
+    border-radius: 100%;
+    position: absolute;
+}
+
+.profile__background {
+
+    @include animatedColor($color-primary);
+
+}
+
+.profile__content {
+    
+    @include flexRowCenter;
+    overflow: hidden;
+
+    .profile__img {
+        margin-top: 1rem;
+        position: absolute;
+        animation: moveUp 0.5s ease-out 2s;
+        animation-fill-mode: backwards;
+        filter: blur(0px);
+    }
+}

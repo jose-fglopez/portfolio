@@ -1,0 +1,15 @@
+.experience {
+    @include flexRowCenter;
+    animation: bounceIn 0.5s ease 1.5s;
+    animation-fill-mode: backwards;
+    height: 30rem;
+    width: 25rem;
+    width: 100%;
+
+    @include respond(phone) {
+        @include flexColumnCenter;
+        height: auto;
+        gap: 2rem;
+    }
+
+}

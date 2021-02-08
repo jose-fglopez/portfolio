@@ -1,0 +1,93 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin absBottomLeft {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+@mixin boxShadow {
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+}
+
+@mixin flexRowCenter{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexColumnCenter{
+    @include flexRowCenter;
+    flex-direction: column;
+}
+
+@mixin animatedColorBackground{
+
+    &.secondary {
+        @include animatedColor($color-secondary);
+    }
+
+    &.tertiary {
+        @include animatedColor($color-tertiary);
+    }
+
+    &.primary {
+        @include animatedColor($color-primary);
+    }
+
+}
+/*
+Breakpoint argument choices
+- phone
+- tab-port
+- tab-land 
+- big-desktop
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        // 600px
+        @media (max-width: 40em) {
+            @content;
+        } // content uses block of code
+    }
+    @if $breakpoint == tab-port {
+        // 900px
+        @media (max-width: 65em) {
+            @content;
+        } // content uses block of code
+    }
+    @if $breakpoint == tab-land {
+        // 1200px
+        @media (max-width: 85em) {
+            @content;
+        } // content uses block of code
+    }
+    @if $breakpoint == big-desktop {
+        // 1800px
+        @media (min-width: 112.5em) {
+            @content;
+        } // content uses block of code
+    }
+}
+
+@mixin animatedColor($color) {
+    background: linear-gradient(-45deg, lighten($color, 10%), $color, darken($color, 10%));
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite ;
+    filter: drop-shadow(0px 0px 5px rgba($color, 0.5));
+}

@@ -1,0 +1,132 @@
+$position-img-height: 4rem;
+$position-img-width: 4rem;
+$position-img-border: 0.4rem;
+
+.role-card {
+    height: 22.25rem;
+    width: 15.85rem;
+    border-radius: 1rem;
+    color: $color-gray-light;
+
+    display: grid;
+    grid-template-rows: 0.8rem 1fr 1.5rem 1fr;
+
+    position: absolute;
+    overflow: hidden;
+
+    will-change: transform;
+    transition: all 0.4s;
+
+
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.5));
+
+    @for $i from 0 through 2 {
+        &.role-card--#{$i} {
+            @if $i == 0 {
+                transform: translateX(-3rem) translateY(1rem) rotate(-7deg);
+                z-index: 1;
+
+                &:hover {
+                    transition-delay: 0.2s;
+                    transform: translateX(-4rem) translateY(0) rotate(-7deg);
+                }
+            }
+
+            @if $i == 1 {
+                transform: translateX(3rem) translateY(1rem) rotate(7deg);
+                z-index: 3;
+                &:hover {
+                    transition-delay: 0.2s;
+                    transform: translateX(4rem) translateY(0) rotate(7deg);
+                }
+            }
+
+            @if $i == 2 {
+                z-index: 6;
+            }
+        }
+    }
+
+    @include respond(phone) {
+        transform: translateX(0) translateY(0) rotate(0) !important;
+        position: relative;
+    }
+
+    .role-card__top {
+        @include animatedColorBackground;
+    }
+
+    .role-card__header {
+        @include flexColumnCenter;
+
+        width: 100%;
+        background-color: $background-color;
+        will-change: transform;
+
+        .role-card__title {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        .role-card__img-container {
+            @include animatedColorBackground;
+
+            height: $position-img-height;
+            width: $position-img-width;
+            border-radius: 100%;
+            @include flexRowCenter;
+        }
+        .role-card__img {
+            background-color: $color-gray-dark;
+            padding: #{$position-img-border};
+            height: calc(#{$position-img-height} - #{$position-img-border});
+            width: calc(#{$position-img-width} - #{$position-img-border});
+            border-radius: 100%;
+        }
+    }
+
+    .role-card__separator {
+        position: relative;
+        @include animatedColorBackground;
+    }
+
+    .role-card__body {
+        width: 100%;
+        background-color: $color-gray-dark;
+        font-size: 0.8rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+
+        ul {
+            li {
+                padding: 0.5rem 0;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            }
+        }
+        .role-card__body__icons {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(1.5rem, 1fr));
+            direction: rtl;
+            gap: 0.5rem;
+            padding: 0.5rem;
+
+            i {
+                font-size: 1.5rem;
+                cursor: pointer;
+
+                &:not(:hover) {
+                    color: $color-gray-light !important;
+                    opacity: 0.6;
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
