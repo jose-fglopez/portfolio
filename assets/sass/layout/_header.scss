@@ -97,6 +97,7 @@ header {
             }
 
             i {
+                transition: color 0.2s;
                 color: $color-gray-light;
             }
             &:hover {
