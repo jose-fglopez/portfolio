@@ -8,7 +8,7 @@
 .profile {
     @include flexRowCenter;
     position: relative;
-    animation: scale 0.5s ease-out 1.5s;
+    animation: scale 0.3s ease-out 1.5s;
     animation-fill-mode: backwards;
 }
 
@@ -33,7 +33,7 @@
     .profile__img {
         margin-top: 1rem;
         position: absolute;
-        animation: moveUp 0.5s ease-out 2s;
+        animation: moveUp 0.3s ease-out 2s;
         animation-fill-mode: backwards;
         filter: blur(0px);
     }
